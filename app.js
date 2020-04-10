@@ -22,8 +22,8 @@ mongoose.set('useUnifiedTopology', true);
 
 mongoose.connect(process.env.MONGODB_URI);
 
-process.env.PORT = 3000;
-process.env.IP = "127.0.0.1";
+// process.env.PORT = 3000;
+// process.env.IP = "127.0.0.1";
 
 app.use(require("express-session")({
   secret: "hunter horse battery staple",
