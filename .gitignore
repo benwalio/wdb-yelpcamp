@@ -7,3 +7,4 @@ secrets.*
 *.mp3
 *.secret
 *-lock.json
+.env
