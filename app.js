@@ -20,7 +20,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 // mongoose.connect("mongodb://localhost/yelpcamp");
 
-mongoose.connect("proess.env.DATABASEURL");
+mongoose.connect(process.env.DATABASEURL);
 
 // process.env.PORT = 3000;
 // process.env.IP = "127.0.0.1";

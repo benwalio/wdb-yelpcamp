@@ -18,11 +18,11 @@ router.post("/register", function (req, res) {
     User.register(newUser, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
-            res.flash("error", "server error [" + err.message + "]");
+            req.flash("error", "server error [" + err.message + "]");
             return res.render("register");
         } else {
             passport.authenticate("local")(req, res, function () {
-                res.flash("success", "you have created an account");
+                req.flash("success", "you have created an account");
                 res.redirect("/campgrounds");
             });
         }
@@ -54,7 +54,7 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.flash("error", "you need to be logged in");
+    req.flash("error", "you need to be logged in");
     res.redirect("/login");
 };
 
